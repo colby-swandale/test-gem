@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: ruby:2.7
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: |
+            gem install bundler
+            bundle install
+            bundle exec rake test
